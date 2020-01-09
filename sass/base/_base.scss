@@ -1,0 +1,43 @@
+/* Universal selector */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /* Default value is 16px. 62.5% of 16px = 10px. */
+
+    // @include respond(large-desktop) {
+    //     font-size: 75%; // i want 1rem = 12px --> 12/16 = 75%
+    // }
+
+    @include respond(tab-land) {
+        font-size: 56.25%; // i want 1rem = 9px --> 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // i want 1rem = 8px --> 8/16 - 50%
+    }
+
+    // @include respond(phone) {
+    //     font-size: 30%; // i want 1rem =
+    // }
+}
+
+body {
+    box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+// change color of highlighted text
+::selection {
+    background-color: $color-primary;
+    color: $color-white;
+}

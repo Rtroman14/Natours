@@ -1,0 +1,54 @@
+// fix pixel height of 0 for col-1-of-2
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absoluteCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet protrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800px]: Normal styles apply
+1800px + :      Large desktep
+*/
+
+// can't use px when defining width. Need "em"
+// since default font size = 16px --> width / 16px = #em
+// 16px = 1em
+
+// ORDER OF OPERATION: base + typography > general layout + grid > page layout > components
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        // 600px / 16px = 37.5em
+        @media (max-width: 37.5em) {
+            @content; // need defined so when it's called, properties can be added to mixin
+        }
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) {
+            @content;
+        }
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) {
+            @content;
+        }
+    }
+    @if $breakpoint == large-desktop {
+        @media (max-width: 112.5em) {
+            @content;
+        }
+    }
+}
