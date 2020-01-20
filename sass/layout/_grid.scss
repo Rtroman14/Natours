@@ -63,14 +63,13 @@
 }
 
 .col-2 {
-    @include respond(tab-port) {
-        margin-right: 0;
-        margin-bottom: $gutter-vertical-small;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    @include respond(tab-port) {
-        width: 100% !important; // change width of columns to 100%
-    }
+    // @include respond(tab-port) {
+    //     width: 100% !important; // change width of columns to 100%
+    // }
 }
 
 .row-1 {
@@ -78,5 +77,20 @@
     max-width: 114rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: max-content;
     grid-gap: 10rem;
+
+    @include respond(tab-land) {
+        grid-gap: 5rem;
+    }
+
+    @include respond(tab-port) {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content;
+        max-width: 50rem;
+    }
+
+    @include respond(phone) {
+        padding: 0 3rem;
+    }
 }
