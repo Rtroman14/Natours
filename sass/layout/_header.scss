@@ -19,7 +19,6 @@
 
         height: 96vh;
     }
-
     // change to larger picture if min-resolution >= 192dpi (mac screen) and > 600px or safari browser px ratio >= 2 or > 2000px
     // image is 2000px width. Phones are 2 DPR (device pixel ratio) = 2x pixels
     // 600px / 16px = 37.5em
@@ -31,7 +30,7 @@
                 rgba($color-primary-light, 0.8),
                 rgba($color-primary-dark, 0.8)
             ),
-            url(../img/hero.jpg);
+            url(../img/half-dome.jpg);
     }
 
     @include respond(phone) {
