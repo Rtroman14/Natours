@@ -1,10 +1,16 @@
 // COLORS
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
+// $color-primary: #55c57a;
+// $color-primary-light: #7ed56f;
+// $color-primary-dark: #28b485;
+$color-primary: #2d545e;
+$color-primary-light: lighten($color-primary, 15%);
+$color-primary-dark: darken($color-primary, 15%);
 
-$color-secondary-light: #ffb900;
-$color-secondary-dark: #ff7730;
+// $color-secondary-light: #ffb900;
+// $color-secondary-dark: #ff7730;
+$color-secondary: #e1b382;
+$color-secondary-light: lighten($color-secondary, 15%);
+$color-secondary-dark: darken($color-secondary, 15%);
 
 $color-tertiary-light: #2998ff;
 $color-tertiary-dark: #5643fa;

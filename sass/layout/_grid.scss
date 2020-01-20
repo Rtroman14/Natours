@@ -61,3 +61,22 @@
         width: calc(3 * ((100% - #{$gutter-horizontal * 3}) / 4) + 2 * #{$gutter-horizontal});
     }
 }
+
+.col-2 {
+    @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+    }
+
+    @include respond(tab-port) {
+        width: 100% !important; // change width of columns to 100%
+    }
+}
+
+.row-1 {
+    margin: 0 auto;
+    max-width: 114rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10rem;
+}

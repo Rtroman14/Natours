@@ -1,7 +1,6 @@
 .btn {
-    &, // for <button> element
-    &:link, // for <a> element
-    // for <a> element
+    &,
+    &:link,
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
@@ -20,12 +19,7 @@
     /* raise button on hover */
     &:hover {
         transform: translateY(-0.3rem);
-        box-shadow: 0 1rem 1.5rem rgba($color-black, 0.2); /* box-shadow: x y blur color; */
-
-        &::after {
-            transform: scaleX(1.4) scaleY(1.6);
-            opacity: 0;
-        }
+        box-shadow: 0 1rem 1.5rem rgba($color-black, 0.2);
     }
 
     /* slightly raise button when clicked */
@@ -55,19 +49,11 @@
     &--yellow {
         background-color: $color-white;
         color: $color-secondary-dark;
-
-        &::after {
-            background-color: $color-secondary-light;
-        }
     }
 
     &--blue {
         background-color: $color-white;
         color: $color-tertiary-dark;
-
-        &::after {
-            background-color: $color-tertiary-dark;
-        }
     }
 
     &::after {
@@ -93,19 +79,18 @@
     &:link,
     &:visited {
         font-size: $default-font-size;
-        color: $color-primary;
+        color: $color-white;
         display: inline-block;
         text-decoration: none;
-        border-bottom: 1px solid $color-primary;
-        padding: 3px;
+        border-radius: 50rem;
+        background-color: $color-primary;
+        padding: 0.7rem 1.4rem;
 
         // hover transition lasts .2 seconds
         transition: all 0.2s;
     }
 
     &:hover {
-        background-color: $color-primary;
-        color: $color-white;
         box-shadow: 0 1rem 1.5rem rgba($color-black, 0.2); /* box-shadow: x y blur color; */
         transform: translateY(-0.3rem);
     }
